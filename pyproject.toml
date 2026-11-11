@@ -1,0 +1,33 @@
+[project]
+name = "fpdk"
+version = "0.2.1"
+description = "an API for proofing fonts"
+readme = "README.md"
+requires-python = ">=3.12"
+dependencies = [
+    "defcon>=0.12.2",
+    "drawbot>=3.130",
+    "drawbotgrid",
+    "english-words>=2.0.2",
+    "fonttools>=4.59.0",
+    "iso639-lang>=2.6.3",
+    "more-itertools>=10.7.0",
+    "setuptools>=69.1.1",
+    "ufoprocessor>=1.13.3",
+    "wordsiv",
+]
+
+
+[tool.setuptools]
+include-package-data = false
+
+[tool.setuptools.packages.find]
+where = ["Lib"]
+include = ["fPDK*"]
+exclude = ["tests*", "docs*", "*.egg-info*"]
+
+
+[tool.uv.sources]
+drawbot = { git = "https://github.com/typemytype/drawbot.git" }
+drawbotgrid = { git = "https://github.com/mathieureguer/drawbotgrid.git" }
+wordsiv = { git = "https://github.com/tallpauley/wordsiv.git" }
